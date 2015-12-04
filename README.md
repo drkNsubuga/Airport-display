@@ -24,7 +24,7 @@ To run the project, you need the following tools and resources:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/drkNsubuga/8051-flight-boarding.git
+git clone https://github.com/drkNsubuga/Airport-display.git
 ```
 
 2. Open the Keil uVision IDE and create a new project.
