@@ -55,13 +55,13 @@ Please refer to the code implementation in the project files for more detailed i
 Here are some preview images from the Proteus simulation to give you an idea of how the system looks during different stages of the boarding process:
 
 1. Boarding Message Display:
-![plane-boarding-preview](AirportSchema/plane-boarding-preview.jpg)
+![Plane boarding Preview](AirportSchema/plane-boarding-preview.jpg)
 
 2. Gate Closing Announcement:
-![plane-boarding-preview](AirportSchema/gate-closing-preview.jpg)
+![Gate Closing Preview](AirportSchema/gate-closing-preview.jpg)
 
 3. Plane Taking Off:
-![plane-boarding-preview](AirportSchema/plane-take-off-preview.jpg)
+![Plane Taking Off Preview](AirportSchema/plane-take-off-preview.jpg)
 
 
 ## License
