@@ -61,7 +61,7 @@ Here are some preview images from the Proteus simulation to give you an idea of 
 ![Gate Closing Preview](AirportSchema/gate-closing-preview.jpg)
 
 3. Plane Taking Off:
-![Plane Taking Off Preview](AirportSchema/plane-take-off-preview.jpg)
+![Plane Taking Off Preview](AirportSchema/plane-takeoff-preview.jpg)
 
 
 ## License
