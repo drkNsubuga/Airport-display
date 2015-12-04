@@ -1,0 +1,19 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Developer\Projects\Embedded\Rodgers\AirportCode\airport.uvproj
+Project File Date:  12/01/2015
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling airport.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYSEC?AIRPORT
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SWITCHOFFLCD?AIRPORT
+Program Size: data=109.1 xdata=0 code=2701
+creating hex file from "airport"...
+"airport" - 0 Error(s), 2 Warning(s).

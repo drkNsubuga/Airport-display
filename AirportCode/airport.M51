@@ -1,0 +1,521 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/04/2015  12:23:15  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE airport.obj TO airport RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  airport.obj (AIRPORT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  airport (AIRPORT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?AIRPORT
+                    000EH     0012H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            DATA    0022H     005DH     UNIT         _DATA_GROUP_
+            IDATA   007FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0B5CH     0184H     UNIT         ?C?LIB_CODE
+            CODE    0CE0H     014EH     UNIT         ?PR?RUNSCHEDULE?AIRPORT
+            CODE    0E2EH     00EDH     UNIT         ?PR?TIMER?AIRPORT
+            CODE    0F1BH     00C0H     UNIT         ?CO?AIRPORT
+            CODE    0FDBH     008CH     UNIT         ?C_C51STARTUP
+            CODE    1067H     0073H     UNIT         ?PR?_SETLINE?AIRPORT
+            CODE    10DAH     0056H     UNIT         ?PR?_WRITETXTLCD?AIRPORT
+            CODE    1130H     0041H     UNIT         ?PR?_PLANE?AIRPORT
+            CODE    1171H     0034H     UNIT         ?PR?_WRITENUMLCD?AIRPORT
+            CODE    11A5H     0033H     UNIT         ?PR?MAIN?AIRPORT
+            CODE    11D8H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    11FFH     0024H     UNIT         ?PR?INIT?AIRPORT
+            CODE    1223H     001BH     UNIT         ?PR?_DELAYMS?AIRPORT
+            CODE    123EH     0012H     UNIT         ?PR?ENABLE?AIRPORT
+            CODE    1250H     000DH     UNIT         ?C_INITSEG
+            CODE    125DH     000CH     UNIT         ?PR?_DELAYUS?AIRPORT
+            CODE    1269H     000CH     UNIT         ?PR?_DELAYSEC?AIRPORT
+            CODE    1275H     000CH     UNIT         ?PR?SWITCHOFFLCD?AIRPORT
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/04/2015  12:23:15  PAGE 2
+
+
+            CODE    1281H     0009H     UNIT         ?PR?BUZZER?AIRPORT
+
+
+
+OVERLAY MAP OF MODULE:   airport (AIRPORT)
+
+
+SEGMENT                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH     START    LENGTH
+--------------------------------------------------------------------
+?C_C51STARTUP                    -----    -----      -----    -----
+  +--> ?PR?MAIN?AIRPORT
+  +--> ?C_INITSEG
+
+?PR?MAIN?AIRPORT                 -----    -----      -----    -----
+  +--> ?PR?INIT?AIRPORT
+  +--> ?CO?AIRPORT
+  +--> ?PR?_WRITETXTLCD?AIRPORT
+  +--> ?PR?RUNSCHEDULE?AIRPORT
+
+?PR?INIT?AIRPORT                 -----    -----      -----    -----
+  +--> ?PR?ENABLE?AIRPORT
+
+?PR?ENABLE?AIRPORT               -----    -----      -----    -----
+  +--> ?PR?_DELAYMS?AIRPORT
+
+?PR?_DELAYMS?AIRPORT             -----    -----      -----    -----
+  +--> ?PR?_DELAYUS?AIRPORT
+
+?PR?_WRITETXTLCD?AIRPORT         -----    -----      004AH    0009H
+  +--> ?PR?_SETLINE?AIRPORT
+  +--> ?PR?_DELAYUS?AIRPORT
+
+?PR?_SETLINE?AIRPORT             -----    -----      0053H    002CH
+  +--> ?CO?AIRPORT
+  +--> ?PR?ENABLE?AIRPORT
+
+?PR?RUNSCHEDULE?AIRPORT          -----    -----      0022H    0010H
+  +--> ?PR?_PLANE?AIRPORT
+  +--> ?CO?AIRPORT
+  +--> ?PR?_WRITETXTLCD?AIRPORT
+  +--> ?PR?TIMER?AIRPORT
+  +--> ?PR?_WRITENUMLCD?AIRPORT
+  +--> ?PR?BUZZER?AIRPORT
+  +--> ?PR?_DELAYMS?AIRPORT
+
+?PR?_PLANE?AIRPORT               -----    -----      0032H    000DH
+  +--> ?CO?AIRPORT
+  +--> ?PR?_WRITETXTLCD?AIRPORT
+
+?PR?TIMER?AIRPORT                -----    -----      -----    -----
+  +--> ?PR?_DELAYMS?AIRPORT
+  +--> ?PR?_WRITENUMLCD?AIRPORT
+  +--> ?CO?AIRPORT
+  +--> ?PR?_WRITETXTLCD?AIRPORT
+
+?PR?_WRITENUMLCD?AIRPORT         -----    -----      0032H    0018H
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/04/2015  12:23:15  PAGE 3
+
+
+  +--> ?CO?AIRPORT
+  +--> ?PR?PRINTF?PRINTF
+  +--> ?PR?_WRITETXTLCD?AIRPORT
+
+?PR?PRINTF?PRINTF                0020H.0  0001H.1    004AH    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+
+
+SYMBOL TABLE OF MODULE:  airport (AIRPORT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        AIRPORT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0E35H         PUBLIC        Timer
+  D:00A8H         PUBLIC        IE
+  C:1269H         PUBLIC        _DelaySec
+  C:1138H         PUBLIC        _plane
+  B:00B0H.2       PUBLIC        EN
+  C:11FFH         PUBLIC        Init
+  D:00B8H         PUBLIC        IP
+  B:00B0H.0       PUBLIC        RS
+  C:1281H         PUBLIC        buzzer
+  C:11A5H         PUBLIC        main
+  C:1275H         PUBLIC        SwitchOffLcd
+  B:00B0H.1       PUBLIC        RW
+  D:0008H         PUBLIC        secs
+  C:1227H         PUBLIC        _DelayMs
+  D:000AH         PUBLIC        hours
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:1067H         PUBLIC        _SetLine
+  D:000CH         PUBLIC        mins
+  C:125DH         PUBLIC        _DelayUs
+  C:0FAAH         SYMBOL        _?ix1000
+  C:0FD2H         SYMBOL        _?ix1001
+  C:123EH         PUBLIC        Enable
+  C:1174H         PUBLIC        _WriteNumLcd
+  B:00B0H.3       PUBLIC        BUZZER
+  C:10E6H         PUBLIC        _WriteTxtLcd
+  D:00C8H         PUBLIC        T2CON
+  C:0CE0H         PUBLIC        RunSchedule
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAYUS
+  D:0006H         SYMBOL        us_count
+  C:125DH         LINE#         12
+  C:125DH         LINE#         13
+  C:125DH         LINE#         14
+  C:1261H         LINE#         15
+  C:1261H         LINE#         16
+  C:1266H         LINE#         17
+  C:1268H         LINE#         18
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/04/2015  12:23:15  PAGE 4
+
+
+  -------         ENDPROC       _DELAYUS
+  C:1223H         SYMBOL        L?0076
+  -------         PROC          L?0075
+  -------         ENDPROC       L?0075
+  C:1223H         SYMBOL        L?0076
+  -------         PROC          _DELAYMS
+  D:0004H         SYMBOL        ms_count
+  C:1227H         LINE#         34
+  C:122BH         LINE#         35
+  C:122BH         LINE#         36
+  C:122FH         LINE#         37
+  C:122FH         LINE#         38
+  C:1236H         LINE#         39
+  C:123BH         LINE#         40
+  C:123DH         LINE#         41
+  -------         ENDPROC       _DELAYMS
+  -------         PROC          _DELAYSEC
+  D:0003H         SYMBOL        sec_count
+  C:1269H         LINE#         62
+  C:126BH         LINE#         63
+  C:126BH         LINE#         66
+  C:126EH         LINE#         67
+  C:126EH         LINE#         68
+  C:1271H         LINE#         69
+  C:1272H         LINE#         70
+  C:1274H         LINE#         71
+  -------         ENDPROC       _DELAYSEC
+  -------         PROC          BUZZER
+  C:1281H         LINE#         3
+  C:1281H         LINE#         4
+  C:1281H         LINE#         6
+  C:1284H         LINE#         7
+  C:1284H         LINE#         8
+  C:1286H         LINE#         9
+  C:1287H         LINE#         10
+  C:1287H         LINE#         11
+  C:1289H         LINE#         12
+  C:1289H         LINE#         13
+  -------         ENDPROC       BUZZER
+  -------         PROC          ENABLE
+  C:123EH         LINE#         4
+  C:123EH         LINE#         5
+  C:1240H         LINE#         6
+  C:1247H         LINE#         7
+  C:1249H         LINE#         8
+  -------         ENDPROC       ENABLE
+  -------         PROC          INIT
+  C:11FFH         LINE#         13
+  C:11FFH         LINE#         14
+  C:1201H         LINE#         15
+  C:1203H         LINE#         16
+  C:1205H         LINE#         17
+  C:1208H         LINE#         18
+  C:120BH         LINE#         19
+  C:120EH         LINE#         20
+  C:1211H         LINE#         21
+  C:1214H         LINE#         23
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/04/2015  12:23:15  PAGE 5
+
+
+  C:1217H         LINE#         24
+  C:121AH         LINE#         25
+  C:121DH         LINE#         26
+  C:1220H         LINE#         27
+  -------         ENDPROC       INIT
+  -------         PROC          _SETLINE
+  D:0053H         SYMBOL        line
+  D:0055H         SYMBOL        pos
+  -------         DO            
+  D:0057H         SYMBOL        posindex
+  -------         ENDDO         
+  C:1067H         LINE#         36
+  C:106FH         LINE#         37
+  C:1082H         LINE#         39
+  C:1084H         LINE#         40
+  C:1086H         LINE#         41
+  C:109AH         LINE#         42
+  C:10A9H         LINE#         43
+  C:10B8H         LINE#         44
+  C:10C7H         LINE#         45
+  C:10D4H         LINE#         46
+  C:10D4H         LINE#         47
+  C:10D7H         LINE#         48
+  C:10D9H         LINE#         49
+  -------         ENDPROC       _SETLINE
+  C:10DCH         SYMBOL        L?0070
+  -------         PROC          L?0069
+  -------         ENDPROC       L?0069
+  C:10DCH         SYMBOL        L?0070
+  -------         PROC          _WRITETXTLCD
+  D:004AH         SYMBOL        txt
+  D:0006H         SYMBOL        line
+  D:004FH         SYMBOL        lcdpos
+  -------         DO            
+  D:0051H         SYMBOL        pos
+  -------         ENDDO         
+  C:10E6H         LINE#         55
+  C:10F0H         LINE#         56
+  C:10F5H         LINE#         57
+  C:10FCH         LINE#         58
+  C:110DH         LINE#         59
+  C:110FH         LINE#         60
+  C:1111H         LINE#         61
+  C:1113H         LINE#         62
+  C:1115H         LINE#         63
+  C:111CH         LINE#         64
+  C:111EH         LINE#         65
+  C:1125H         LINE#         66
+  C:112DH         LINE#         67
+  C:112FH         LINE#         68
+  -------         ENDPROC       _WRITETXTLCD
+  -------         PROC          L?0077
+  -------         ENDPROC       L?0077
+  -------         PROC          _WRITENUMLCD
+  D:0006H         SYMBOL        num
+  D:0032H         SYMBOL        line
+  D:0034H         SYMBOL        lcdpos
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/04/2015  12:23:15  PAGE 6
+
+
+  -------         DO            
+  D:0036H         SYMBOL        buffer
+  -------         ENDDO         
+  C:1174H         LINE#         73
+  C:117CH         LINE#         75
+  C:1192H         LINE#         76
+  -------         ENDPROC       _WRITENUMLCD
+  -------         PROC          SWITCHOFFLCD
+  C:1275H         LINE#         81
+  C:1275H         LINE#         82
+  C:1277H         LINE#         83
+  C:1279H         LINE#         84
+  C:127BH         LINE#         85
+  C:127EH         LINE#         86
+  -------         ENDPROC       SWITCHOFFLCD
+  C:0E2EH         SYMBOL        L?0072
+  -------         PROC          L?0071
+  -------         ENDPROC       L?0071
+  C:0E2EH         SYMBOL        L?0072
+  -------         PROC          TIMER
+  C:0E35H         LINE#         6
+  C:0E35H         LINE#         7
+  C:0E38H         LINE#         8
+  C:0E40H         LINE#         9
+  C:0E51H         LINE#         10
+  C:0E54H         LINE#         11
+  C:0E5CH         LINE#         12
+  C:0E5EH         LINE#         13
+  C:0E65H         LINE#         14
+  C:0E65H         LINE#         15
+  C:0E78H         LINE#         16
+  C:0E80H         LINE#         17
+  C:0E88H         LINE#         18
+  C:0E8DH         LINE#         19
+  C:0E8DH         LINE#         20
+  C:0EA0H         LINE#         21
+  C:0EA3H         LINE#         22
+  C:0EABH         LINE#         23
+  C:0EADH         LINE#         24
+  C:0EB4H         LINE#         25
+  C:0EB4H         LINE#         26
+  C:0EC7H         LINE#         27
+  C:0ECFH         LINE#         28
+  C:0ED7H         LINE#         29
+  C:0EDCH         LINE#         30
+  C:0EDCH         LINE#         31
+  C:0EEFH         LINE#         32
+  C:0EF5H         LINE#         33
+  C:0EFDH         LINE#         34
+  C:0EFFH         LINE#         35
+  C:0F06H         LINE#         36
+  C:0F06H         LINE#         37
+  C:0F0EH         LINE#         38
+  C:0F1AH         LINE#         39
+  C:0F1AH         LINE#         40
+  -------         ENDPROC       TIMER
+  C:1132H         SYMBOL        L?0074
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/04/2015  12:23:15  PAGE 7
+
+
+  -------         PROC          L?0073
+  -------         ENDPROC       L?0073
+  C:1132H         SYMBOL        L?0074
+  -------         PROC          _PLANE
+  D:0032H         SYMBOL        planeno
+  D:0034H         SYMBOL        line
+  -------         DO            
+  D:0036H         SYMBOL        planes
+  -------         ENDDO         
+  C:1138H         LINE#         6
+  C:1140H         LINE#         7
+  C:1140H         LINE#         8
+  C:1153H         LINE#         9
+  -------         ENDPROC       _PLANE
+  -------         PROC          RUNSCHEDULE
+  -------         DO            
+  D:0022H         SYMBOL        j
+  D:0024H         SYMBOL        planes
+  D:0026H         SYMBOL        k
+  D:0028H         SYMBOL        tick
+  D:0006H         SYMBOL        TakeOffTime
+  D:0004H         SYMBOL        beforeTakeoffTime
+  D:002AH         SYMBOL        showBoardingMessageTime
+  D:002CH         SYMBOL        gateClosingTime
+  D:002EH         SYMBOL        gateCountdownDelay
+  D:0030H         SYMBOL        takeoffAlarmDuration
+  -------         ENDDO         
+  C:0CE0H         LINE#         24
+  C:0CE0H         LINE#         25
+  C:0CE0H         LINE#         27
+  C:0CE6H         LINE#         28
+  C:0CEBH         LINE#         30
+  C:0CEBH         LINE#         31
+  C:0CEEH         LINE#         32
+  C:0CF8H         LINE#         33
+  C:0CFEH         LINE#         34
+  C:0D09H         LINE#         35
+  C:0D0FH         LINE#         38
+  C:0D22H         LINE#         40
+  C:0D27H         LINE#         43
+  C:0D3AH         LINE#         44
+  C:0D45H         LINE#         45
+  C:0D54H         LINE#         46
+  C:0D5AH         LINE#         48
+  C:0D60H         LINE#         51
+  C:0D66H         LINE#         52
+  C:0D6CH         LINE#         53
+  C:0D6CH         LINE#         54
+  C:0D6CH         LINE#         55
+  C:0D6FH         LINE#         56
+  C:0D77H         LINE#         57
+  C:0D79H         LINE#         58
+  C:0D80H         LINE#         59
+  C:0D83H         LINE#         60
+  C:0D89H         LINE#         61
+  C:0D8FH         LINE#         62
+  C:0D8FH         LINE#         63
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/04/2015  12:23:15  PAGE 8
+
+
+  C:0D8FH         LINE#         64
+  C:0D92H         LINE#         65
+  C:0D9AH         LINE#         66
+  C:0D9CH         LINE#         67
+  C:0DAFH         LINE#         68
+  C:0DC2H         LINE#         69
+  C:0DC8H         LINE#         70
+  C:0DCEH         LINE#         71
+  C:0DCEH         LINE#         72
+  C:0DCEH         LINE#         73
+  C:0DD1H         LINE#         74
+  C:0DE0H         LINE#         75
+  C:0DE8H         LINE#         76
+  C:0DEAH         LINE#         79
+  C:0DF0H         LINE#         80
+  C:0DF6H         LINE#         81
+  C:0DF6H         LINE#         82
+  C:0DF9H         LINE#         83
+  C:0E00H         LINE#         84
+  C:0E08H         LINE#         85
+  C:0E0AH         LINE#         86
+  C:0E0CH         LINE#         88
+  C:0E13H         LINE#         89
+  C:0E16H         LINE#         90
+  C:0E19H         LINE#         91
+  C:0E22H         LINE#         92
+  C:0E2DH         LINE#         93
+  -------         ENDPROC       RUNSCHEDULE
+  -------         PROC          MAIN
+  C:11A5H         LINE#         11
+  C:11A5H         LINE#         12
+  C:11A5H         LINE#         13
+  C:11A8H         LINE#         14
+  C:11ABH         LINE#         15
+  C:11ADH         LINE#         16
+  C:11ADH         LINE#         17
+  C:11ADH         LINE#         18
+  C:11C0H         LINE#         19
+  C:11D3H         LINE#         20
+  C:11D6H         LINE#         22
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        AIRPORT
+
+  -------         MODULE        ?C?COPY
+  C:0C2CH         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0C52H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        PRINTF
+  D:004AH         PUBLIC        ?_PRINTF517?BYTE
+  D:004AH         PUBLIC        ?_PRINTF?BYTE
+  D:004AH         PUBLIC        ?_SPRINTF517?BYTE
+  D:004AH         PUBLIC        ?_SPRINTF?BYTE
+  C:0862H         PUBLIC        _PRINTF
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/04/2015  12:23:15  PAGE 9
+
+
+  C:0862H         PUBLIC        _PRINTF517
+  C:085CH         PUBLIC        _SPRINTF
+  C:085CH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:0C7FH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0C98H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0CAAH         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:0CBAH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:11D8H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYSEC?AIRPORT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SWITCHOFFLCD?AIRPORT
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 04F6H BYTE (62%) *
+******************************************************************************
+
+Program Size: data=109.1 xdata=0 code=2701
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
