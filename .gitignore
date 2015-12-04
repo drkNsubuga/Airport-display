@@ -1,5 +1,7 @@
 *.sh
 *.bat
+*.ps1
 AirportSchema/*
 !AirportSchema/*.DSN
+!AirportSchema/*.jpg
 *.docx
