@@ -1,7 +1,7 @@
 # Airport Display Flight Boarding System
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
 ![8051](https://img.shields.io/badge/Microcontroller-8051-blue)
-![Keil](https://img.shields.io/badge/IDE/Toolchain-Keil-orange)
+![Keil](https://img.shields.io/badge/IDE-Keil-orange)
 ![Yes](https://img.shields.io/badge/Proteus-Compatible-brightgreen)
 ![Open Issues](https://img.shields.io/github/issues/drkNsubuga/Airport-Display)
 ![Forks](https://img.shields.io/github/forks/drkNsubuga/Airport-Display)
